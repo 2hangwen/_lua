@@ -41,8 +41,8 @@ end
 
 
 function add_json()
-    --local fd = io.open("./data.txt")
-    local fd = io.open("/root/lua/socket/ff/data.txt")
+    local fd = io.open("./data.txt")
+    --local fd = io.open("/root/lua/socket/ff/data.txt")
     local string_json = fd:read("*all")
     fd:close()
      local r_t = json_2_table(string_json)   
@@ -276,7 +276,7 @@ end
 
 local gd = require("gd")
 
-out_file = arg[0].."__output.png"
+out_file = arg[1] or  arg[0].."__output.png"
 
 xo,yo = 5000*1.5,2000*2
 local hb_date,max_x,max_y = add_json()
